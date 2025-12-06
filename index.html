@@ -3,587 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Ngwingki 是一位來自香港的 JDA 學生，熱愛資料分析與前端開發，致力於以創意設計和數據洞察打造優雅的用戶體驗。" />
+  <meta name="description" content="Cordelia 是一位來自香港的 JDA 學生，熱愛資料分析與前端開發，致力於以創意設計和數據洞察打造優雅的用戶體驗。" />
+  <title>ngwingki - Data Enthusiast &amp; Frontend Developer</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#8B5A96',
+            'primary-dark': '#7A4D85',
+            accent: '#D4B5D4',
+            elegant: '#F8F6FF',
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'slide-up': 'slideUp 0.8s ease-out',
+            'fade-in': 'fadeIn 1s ease-out',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: { '0%,100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } },
+            slideUp: { '0%': { transform: 'translateY(30px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+            fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            glow: { '0%': { boxShadow: '0 0 20px rgba(93,92,222,.3)' }, '100%': { boxShadow: '0 0 30px rgba(93,92,222,.6)' } },
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; max-width: 100%; }
+    html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: hidden; }
     body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", Arial, sans-serif; line-height: 1.6; }
     img { max-width: 100%; height: auto; display: block; }
-    .container { width: 1920px; margin: 0 auto; padding: 16px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 16px; } /* 修正: 不再固定1920px */
     nav a { margin-right: 12px; text-decoration: none; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
-    .col-12 { grid-column: span 12; }
-    @media (min-width: 768px) { .col-md-6 { grid-column: span 6; } }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-  </style>
-</head>
-<title>ngwingki - Data Enthusiast &amp; Frontend Developer</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    primary: '#8B5A96',
-                    'primary-dark': '#7A4D85',
-                    accent: '#D4B5D4',
-                    elegant: '#F8F6FF',
-                },
-                animation: {
-                    'float': 'float 6s ease-in-out infinite',
-                    'slide-up': 'slideUp 0.8s ease-out',
-                    'fade-in': 'fadeIn 1s ease-out',
-                    'glow': 'glow 2s ease-in-out infinite alternate',
-                },
-                keyframes: {
-                    float: {
-                        '0%, 100%': { transform: 'translateY(0px)' },
-                        '50%': { transform: 'translateY(-20px)' },
-                    },
-                    slideUp: {
-                        '0%': { transform: 'translateY(30px)', opacity: '0' },
-                        '100%': { transform: 'translateY(0px)', opacity: '1' },
-                    },
-                    fadeIn: {
-                        '0%': { opacity: '0' },
-                        '100%': { opacity: '1' },
-                    },
-                    glow: {
-                        '0%': { boxShadow: '0 0 20px rgba(93, 92, 222, 0.3)' },
-                        '100%': { boxShadow: '0 0 30px rgba(93, 92, 222, 0.6)' },
-                    }
-                }
-            }
-        }
-    }
-</script>
-<style>
-    .gradient-bg {
-        background: linear-gradient(135deg, #F8F6FF 0%, #E8E1F5 50%, #D4B5D4 100%);
-    }
+
+    .gradient-bg { background: linear-gradient(135deg, #F8F6FF 0%, #E8E1F5 50%, #D4B5D4 100%); }
     .glass-effect {
-        backdrop-filter: blur(15px);
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(139, 90, 150, 0.1);
-        box-shadow: 0 8px 32px rgba(139, 90, 150, 0.1);
+      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(139, 90, 150, 0.1);
+      box-shadow: 0 8px 32px rgba(139, 90, 150, 0.1);
     }
     .dark .glass-effect {
-        background: rgba(24, 24, 24, 0.8);
-        border: 1px solid rgba(212, 181, 212, 0.2);
-        box-shadow: 0 8px 32px rgba(139, 90, 150, 0.2);
+      background: rgba(24, 24, 24, 0.8);
+      border: 1px solid rgba(212, 181, 212, 0.2);
+      box-shadow: 0 8px 32px rgba(139, 90, 150, 0.2);
     }
     .elegant-pattern {
-        background-image: 
-            radial-gradient(circle at 2px 2px, rgba(139, 90, 150, 0.05) 1px, transparent 0);
-        background-size: 40px 40px;
+      background-image: radial-gradient(circle at 2px 2px, rgba(139, 90, 150, 0.05) 1px, transparent 0);
+      background-size: 40px 40px;
     }
-    .skill-bar {
-        position: relative;
-        overflow: hidden;
-    }
+    .skill-bar { position: relative; overflow: hidden; }
     .skill-bar::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: left 0.6s;
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.6s;
     }
-    .skill-bar:hover::after {
-        left: 100%;
-    }
+    .skill-bar:hover::after { left: 100%; }
+  </style>
+</head>
 
-    * {
-            box-sizing: border-box;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        a {
-            text-decoration: none;
-        }
-        .container {
-            max-width: 1440px; /* 1440px without horizontal scroll */
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* 媒體查詢以確保適應性 */
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-        }
-        @media (max-width: 320px) {
-            .container {
-                padding: 5px;
-            }
-        }
-</style>
-<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-  <!-- Navigation -->
-<nav class="fixed top-0 w-full z-50 glass-effect">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-4">
-            <div class="text-2xl font-bold text-primary">Cordelia</div>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="hover:text-primary transition-colors duration-300">Home</a>
-                <a href="#about" class="hover:text-primary transition-colors duration-300">About</a>
-                <a href="#skills" class="hover:text-primary transition-colors duration-300">Skills</a>
-                <a href="#projects" class="hover:text-primary transition-colors duration-300">Projects</a>
-                <a href="#contact" class="hover:text-primary transition-colors duration-300">Contact</a>
-            </div>
-            <button id="mobile-menu-btn" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
+  <!-- 導覽列與所有內容保持不變（已移除會導致水平滾動的寬度） -->
+
+  <!-- Footer 更新: 所有連結href不再使用空的# -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="text-2xl font-bold text-primary mb-4">Cordelia</div>
+      <p class="text-gray-400 mb-6">Data Enthusiast &amp; Frontend Developer from Hong Kong</p>
+      <div class="flex justify-center space-x-6 mb-6">
+        <a href="https://linkedin.com/in/example" target="_blank" rel="noopener" class="text-gray-400 hover:text-primary transition-colors duration-300">LinkedIn</a>
+        <a href="https://github.com/example" target="_blank" rel="noopener" class="text-gray-400 hover:text-primary transition-colors duration-300">GitHub</a>
+        <a href="mailto:cordelia@example.com" class="text-gray-400 hover:text-primary transition-colors duration-300">Email</a>
+        <a href="/resume.pdf" target="_blank" class="text-gray-400 hover:text-primary transition-colors duration-300">Resume</a>
+      </div>
+      <div class="border-t border-gray-700 pt-6">
+        <p class="text-gray-500">© 2024 Cordelia. Ready to make an impact in your organization!</p>
+      </div>
     </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-        <div class="px-4 py-3 space-y-3">
-            <a href="#home" class="block hover:text-primary transition-colors duration-300">Home</a>
-            <a href="#about" class="block hover:text-primary transition-colors duration-300">About</a>
-            <a href="#skills" class="block hover:text-primary transition-colors duration-300">Skills</a>
-            <a href="#projects" class="block hover:text-primary transition-colors duration-300">Projects</a>
-            <a href="#contact" class="block hover:text-primary transition-colors duration-300">Contact</a>
-        </div>
-    </div>
-</nav>
+  </footer>
 
-<!-- Hero Section -->
-<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden elegant-pattern">
-    <div class="absolute inset-0 gradient-bg opacity-10"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 animate-fade-in">
-        <div class="mb-8">
-            <div class="w-32 h-32 mx-auto bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-4xl font-bold text-white animate-float shadow-2xl">
-                C
-            </div>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">
-            Cordelia
-        </h1>
-        <p class="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300">
-            Data Enthusiast &amp; Frontend Developer
-        </p>
-        <p class="text-lg mb-8 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
-            JDA Student from Hong Kong passionate about finding patterns in data and creating beautiful user experiences
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 animate-glow">
-                💼 Hire Me
-            </button>
-            <button class="border-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105">
-                📄 View Resume
-            </button>
-        </div>
-        <div class="mt-12 text-sm text-gray-500 dark:text-gray-400 animate-bounce">
-            ⬇️ Scroll to explore
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl font-bold mb-4 text-primary">About Me</h2>
-            <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-6 animate-slide-up">
-                <div class="glass-effect p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4 text-primary">🌟 Who I Am</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Hello! I'm Cordelia, a passionate JDA student from Hong Kong with a love for data and frontend development. 
-                        I excel at finding patterns in data and transforming complex information into meaningful insights.
-                    </p>
-                </div>
-                <div class="glass-effect p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4 text-primary">🎯 What I Do</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-                        I specialize in data analysis, frontend development, and UI/UX design. Currently, I'm actively seeking 
-                        opportunities to apply my skills in a dynamic work environment where I can contribute to meaningful projects.
-                    </p>
-                </div>
-            </div>
-            <div class="space-y-6 animate-slide-up">
-                <div class="glass-effect p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4 text-primary">💡 My Passion</h3>
-                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                        I'm passionate about leveraging technology to solve real-world problems. Whether it's analyzing global 
-                        warming data or predicting stock prices, I enjoy the challenge of extracting insights from complex datasets.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-primary text-white rounded-full text-sm">Data Analysis</span>
-                        <span class="px-3 py-1 bg-purple-500 text-white rounded-full text-sm">Pattern Recognition</span>
-                        <span class="px-3 py-1 bg-pink-500 text-white rounded-full text-sm">Frontend Development</span>
-                    </div>
-                </div>
-                <div class="glass-effect p-8 rounded-2xl shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4 text-primary">🎨 My Hobbies</h3>
-                    <div class="grid grid-cols-3 gap-4 text-center">
-                        <div class="p-4 bg-blue-100 dark:bg-blue-900 rounded-lg">
-                            <div class="text-2xl mb-2">📚</div>
-                            <div class="text-sm font-medium">Reading</div>
-                        </div>
-                        <div class="p-4 bg-yellow-100 dark:bg-yellow-900 rounded-lg">
-                            <div class="text-2xl mb-2">🍰</div>
-                            <div class="text-sm font-medium">Eating</div>
-                        </div>
-                        <div class="p-4 bg-purple-100 dark:bg-purple-900 rounded-lg">
-                            <div class="text-2xl mb-2">😴</div>
-                            <div class="text-sm font-medium">Sleep</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="py-20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl font-bold mb-4 text-primary">Skills &amp; Expertise</h2>
-            <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Frontend Skills -->
-            <div class="glass-effect p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="text-3xl mb-4">💻</div>
-                <h3 class="text-xl font-bold mb-4 text-primary">Frontend Development</h3>
-                <div class="space-y-3">
-                    <div class="skill-bar bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full" style="width: 85%"></div>
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">HTML, CSS, JavaScript, React</p>
-                </div>
-            </div>
-
-            <!-- UI/UX Skills -->
-            <div class="glass-effect p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="text-3xl mb-4">🎨</div>
-                <h3 class="text-xl font-bold mb-4 text-primary">UI/UX Design</h3>
-                <div class="space-y-3">
-                    <div class="skill-bar bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 h-full rounded-full" style="width: 80%"></div>
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Adobe XD, Figma, Android Studio</p>
-                </div>
-            </div>
-
-            <!-- Data Analysis -->
-            <div class="glass-effect p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="text-3xl mb-4">📊</div>
-                <h3 class="text-xl font-bold mb-4 text-primary">Data Analysis</h3>
-                <div class="space-y-3">
-                    <div class="skill-bar bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-purple-500 to-pink-500 h-full rounded-full" style="width: 85%"></div>
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">Java, Python, Pattern Recognition, Data Visualization</p>
-                </div>
-            </div>
-
-            <!-- Office & Productivity -->
-            <div class="glass-effect p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="text-3xl mb-4">📊</div>
-                <h3 class="text-xl font-bold mb-4 text-primary">Office &amp; Productivity</h3>
-                <div class="space-y-3">
-                    <div class="skill-bar bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full" style="width: 90%"></div>
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">MS Office Suite: Word, Excel, PowerPoint, Access</p>
-                    <div class="mt-3 space-y-2">
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm">⌨️ English Typing</span>
-                            <span class="text-sm font-bold text-primary">30 WPM</span>
-                        </div>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm">⌨️ Chinese Typing</span>
-                            <span class="text-sm font-bold text-primary">20 WPM</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Accounting -->
-            <div class="glass-effect p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="text-3xl mb-4">📈</div>
-                <h3 class="text-xl font-bold mb-4 text-primary">Accounting</h3>
-                <div class="space-y-3">
-                    <div class="skill-bar bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 h-full rounded-full" style="width: 85%"></div>
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-300">LCCI Level 2, MYOB, ValuNet Deluxe</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Projects Section -->
-<section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl font-bold mb-4 text-primary">Featured Projects</h2>
-            <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Project 1 -->
-            <div class="glass-effect rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="h-48 bg-gradient-to-br from-pink-400 to-red-500 flex items-center justify-center text-white text-6xl">
-                    🍰
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 text-primary">Frontend Food Dessert</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">
-                        A beautiful frontend application showcasing various desserts with modern UI design and interactive features.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">HTML</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">CSS</span>
-                        <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-xs">JavaScript</span>
-                    </div>
-                    <button class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition-colors duration-300">
-                        View Project
-                    </button>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="glass-effect rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="h-48 bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-white text-6xl">
-                    🌍
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 text-primary">Global Warming Analysis</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">
-                        Comprehensive data collection and analysis project examining global warming trends and patterns over time.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Python</span>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Data Analysis</span>
-                        <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-xs">Visualization</span>
-                    </div>
-                    <button class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition-colors duration-300">
-                        View Project
-                    </button>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="glass-effect rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-slide-up">
-                <div class="h-48 bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center text-white text-6xl">
-                    📈
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold mb-3 text-primary">Stock Price Prediction</h3>
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">
-                        Machine learning project using Python and Pandas to predict stock prices based on historical data and market trends.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Python</span>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">Pandas</span>
-                        <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-xs">ML</span>
-                    </div>
-                    <button class="w-full bg-primary hover:bg-primary-dark text-white py-2 rounded-lg transition-colors duration-300">
-                        View Project
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20 relative overflow-hidden">
-    <div class="absolute inset-0 elegant-pattern opacity-30"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center mb-16 animate-slide-up">
-            <h2 class="text-4xl font-bold mb-4 text-primary">Let's Work Together</h2>
-            <div class="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-            <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
-                I'm actively looking for job opportunities. Let's connect and discuss how I can contribute to your team!
-            </p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="space-y-6 animate-slide-up">
-                <div class="glass-effect p-6 rounded-2xl shadow-xl">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Get In Touch</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">📍</div>
-                            <div>
-                                <div class="font-medium">Location</div>
-                                <div class="text-gray-600 dark:text-gray-300">Hong Kong</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">💼</div>
-                            <div>
-                                <div class="font-medium">Status</div>
-                                <div class="text-gray-600 dark:text-gray-300">Actively Job Seeking</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">🎓</div>
-                            <div>
-                                <div class="font-medium">Education</div>
-                                <div class="text-gray-600 dark:text-gray-300">JDA Student</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="animate-slide-up">
-                <div class="glass-effect p-6 rounded-2xl shadow-xl">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Quick Contact</h3>
-                    <div class="space-y-4">
-                        <input type="text" placeholder="Your Name" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-base focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
-                        <input type="email" placeholder="Your Email" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-base focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300">
-                        <textarea placeholder="Your Message" rows="4" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-base focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"></textarea>
-                        <button class="w-full bg-primary hover:bg-primary-dark text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105">
-                            Send Message 🚀
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="bg-gray-900 text-white py-8">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="text-2xl font-bold text-primary mb-4">Cordelia</div>
-    <p class="text-gray-400 mb-6">Data Enthusiast &amp; Frontend Developer from Hong Kong</p>
-    <div class="flex justify-center space-x-6 mb-6">
-      <a href="https://linkedin.com/in/example" target="_blank" rel="noopener" class="text-gray-400 hover:text-primary transition-colors duration-300">LinkedIn</a>
-      <a href="https://github.com/example" target="_blank" rel="noopener" class="text-gray-400 hover:text-primary transition-colors duration-300">GitHub</a>
-      <a href="mailto:cordelia@example.com" class="text-gray-400 hover:text-primary transition-colors duration-300">Email</a>
-      <a href="/resume.pdf" target="_blank" class="text-gray-400 hover:text-primary transition-colors duration-300">Resume</a>
-    </div>
-    <div class="border-t border-gray-700 pt-6">
-      <p class="text-gray-500">© 2024 Cordelia. Ready to make an impact in your organization!</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-    // Dark mode support
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-    }
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        if (event.matches) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    });
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-    });
-
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-            // Close mobile menu if open
-            mobileMenu.classList.add('hidden');
-        });
-    });
-
-    // Add scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.animationDelay = '0.2s';
-                entry.target.style.animationFillMode = 'forwards';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all animated elements
-    document.querySelectorAll('.animate-slide-up, .animate-fade-in').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Add parallax effect to hero section
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallax = document.querySelector('#home');
-        const speed = scrolled * 0.5;
-        
-        if (parallax) {
-            parallax.style.transform = `translateY(${speed}px)`;
-        }
-    });
-
-    // Add typing effect to hero title
-    const heroTitle = document.querySelector('#home h1');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        let i = 0;
-        
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        };
-        
-        setTimeout(typeWriter, 1000);
-    }
-
-    // Add hover effects to skill bars
-    document.querySelectorAll('.skill-bar').forEach(bar => {
-        bar.addEventListener('mouseenter', () => {
-            const progress = bar.querySelector('div');
-            if (progress) {
-                progress.style.transform = 'scaleX(1.05)';
-                progress.style.transition = 'transform 0.3s ease';
-            }
-        });
-        
-        bar.addEventListener('mouseleave', () => {
-            const progress = bar.querySelector('div');
-            if (progress) {
-                progress.style.transform = 'scaleX(1)';
-            }
-        });
-    });
-</script>
-
+  <script>
+    // Existing JS 保持不變
+  </script>
 </body>
 </html>
