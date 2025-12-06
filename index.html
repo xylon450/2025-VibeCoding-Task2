@@ -95,6 +95,38 @@
     .skill-bar:hover::after {
         left: 100%;
     }
+
+    * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        a {
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1440px; /* 1440px without horizontal scroll */
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* 媒體查詢以確保適應性 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 320px) {
+            .container {
+                padding: 5px;
+            }
+        }
 </style>
 <script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
